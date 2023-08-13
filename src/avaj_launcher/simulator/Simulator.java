@@ -9,7 +9,7 @@ public class Simulator {
 		try {
 			BufferedReader bufferedReader = new BufferedReader(new FileReader(args[0]));
 			System.out.println(bufferedReader.readLine());
-			System.out.println(bufferedReader.readLine());
+			bufferedReader.close();
 		} catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println("No input file provided!");
 		} catch (FileNotFoundException e) {

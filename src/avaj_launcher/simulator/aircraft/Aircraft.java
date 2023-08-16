@@ -13,6 +13,7 @@ public class Aircraft extends Flyable {
 		this.coordinates = p_coordinates;
 	}
 	
-	public void updateConditions() {
-	}
+	public void updateConditions() {}
+
+	public String getName() { return ""; }
 }

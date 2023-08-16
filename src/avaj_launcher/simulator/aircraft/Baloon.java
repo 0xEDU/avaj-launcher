@@ -6,9 +6,12 @@ public class Baloon extends Aircraft {
 
 	public Baloon(long p_id, String p_name, Coordinates p_coordinates) {
 		super(p_id, p_name, p_coordinates);
-		//TODO Auto-generated constructor stub
 	}
 	
-	public void updateConditions(){
+	public void updateConditions() {
+	}
+
+	public String getName() {
+		return "Baloon#" + this.name + "(" + this.id + ")";
 	}
 }

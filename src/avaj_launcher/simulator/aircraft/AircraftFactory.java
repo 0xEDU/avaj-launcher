@@ -13,15 +13,15 @@ public class AircraftFactory {
 		if (instance == null) {
 			instance = new AircraftFactory();
 		}
-		if (p_type == "Helicopter") {
+		if (p_type.equals("Helicopter")) {
 			id++;
 			return new Helicopter(id, p_name, p_coordinates);
 		}
-		if (p_type == "JetPlane") {
+		if (p_type.equals("JetPlane")) {
 			id++;
 			return new JetPlane(id, p_name, p_coordinates);
 		}
-		if (p_type == "Baloon") {
+		if (p_type.equals("Baloon")) {
 			id++;
 			return new Baloon(id, p_name, p_coordinates);
 		}

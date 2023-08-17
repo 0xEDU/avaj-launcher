@@ -13,7 +13,18 @@ public class Aircraft extends Flyable {
 		this.coordinates = p_coordinates;
 	}
 	
-	public void updateConditions() {}
+	public void updateConditions() {
+		if (this.coordinates.getHeight() > 100) {
+				this.coordinates = new Coordinates(
+					this.coordinates.getLongitude(),
+					this.coordinates.getLatitude(),
+					100);
+		}
+		if (this.coordinates.getHeight() <= 0) {
+			System.out.println(this.getName() + " landing.");
+			this.weatherTower.unregister(this);
+		}
+	}
 
 	public String getName() { return ""; }
 }

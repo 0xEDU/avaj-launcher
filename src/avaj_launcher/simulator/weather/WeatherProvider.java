@@ -1,9 +1,6 @@
 package src.avaj_launcher.simulator.weather;
 
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
-
-import javax.swing.plaf.synth.SynthStyle;
 
 public class WeatherProvider {
 	private static WeatherProvider instance = null;

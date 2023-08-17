@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import src.avaj_launcher.simulator.aircraft.*;
 import src.avaj_launcher.simulator.weather.Coordinates;
+import src.avaj_launcher.simulator.weather.WeatherTower;
 
 public class Simulator {
 	private static WeatherTower weatherTower;

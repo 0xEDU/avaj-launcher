@@ -1,6 +1,6 @@
 package src.avaj_launcher.simulator.aircraft;
 
-import src.avaj_launcher.simulator.WeatherTower;
+import src.avaj_launcher.simulator.weather.WeatherTower;
 
 abstract public class Flyable {
 	protected WeatherTower weatherTower;

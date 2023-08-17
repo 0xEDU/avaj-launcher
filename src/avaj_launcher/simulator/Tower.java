@@ -1,6 +1,5 @@
 package src.avaj_launcher.simulator;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 

@@ -37,9 +37,12 @@ public class Simulator {
 			for (Flyable flyable : flyables) {
 				flyable.registerTower(weatherTower);
 			}
+			for (int i = 0; i < simulationReruns; i++) {
+				weatherTower.changeWeather();
+			}
 			bufferedReader.close();
 		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("No input file provided!");
+			System.out.println("An array went out of bounds: " + e.getLocalizedMessage());
 		} catch (FileNotFoundException e) {
 			System.out.println("Couldn't open provided file!");
 		}

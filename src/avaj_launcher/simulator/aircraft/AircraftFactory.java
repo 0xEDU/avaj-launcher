@@ -6,8 +6,7 @@ public class AircraftFactory {
 	private static AircraftFactory instance = null;
 	private static long id = -1;
 	
-	private AircraftFactory() {
-	}
+	private AircraftFactory() {}
 	
 	public static Flyable newAircraft(String p_type, String p_name, Coordinates p_coordinates) {
 		if (instance == null) {

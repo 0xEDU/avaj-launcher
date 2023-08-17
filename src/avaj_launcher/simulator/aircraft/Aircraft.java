@@ -1,5 +1,8 @@
 package src.avaj_launcher.simulator.aircraft;
 
+import java.io.IOException;
+
+import src.avaj_launcher.simulator.Logger;
 import src.avaj_launcher.simulator.weather.Coordinates;
 
 public class Aircraft extends Flyable {
@@ -13,7 +16,7 @@ public class Aircraft extends Flyable {
 		this.coordinates = p_coordinates;
 	}
 	
-	public void updateConditions() {
+	public void updateConditions() throws IOException {
 		if (this.coordinates.getHeight() > 100) {
 				this.coordinates = new Coordinates(
 					this.coordinates.getLongitude(),
@@ -21,7 +24,7 @@ public class Aircraft extends Flyable {
 					100);
 		}
 		if (this.coordinates.getHeight() <= 0) {
-			System.out.println(this.getName() + " landing.");
+			Logger.log(this.getName() + " landing.");
 			this.weatherTower.unregister(this);
 		}
 	}

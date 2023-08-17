@@ -14,9 +14,8 @@ public class WeatherProvider {
 			instance = new WeatherProvider();
 		}
 		long seed = System.currentTimeMillis()
-			+ ((p_coordinates.getHeight()
-				+ p_coordinates.getLatitude()
-				+ p_coordinates.getLongitude()) / 3);
+			+ ((p_coordinates.getHeight() + p_coordinates.getLatitude()
+			+ p_coordinates.getLongitude()) / 3);
 		int random = ThreadLocalRandom.current().nextInt(1, 4 + 1);
 		String current = weather[(int) Math.abs((random + seed )% 4)];
 		return current;

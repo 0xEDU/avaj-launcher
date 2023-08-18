@@ -42,10 +42,10 @@ public class Simulator {
 				weatherTower.changeWeather();
 			}
 			bufferedReader.close();
-		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("An array went out of bounds: " + e.getLocalizedMessage());
 		} catch (FileNotFoundException e) {
 			System.out.println("Couldn't open provided file!");
+		} catch (NumberFormatException | NullPointerException | ArrayIndexOutOfBoundsException e) {
+			System.out.println("Invalid input file!");
 		}
 	}
 }

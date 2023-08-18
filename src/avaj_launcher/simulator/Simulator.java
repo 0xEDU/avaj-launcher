@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 import src.avaj_launcher.simulator.aircraft.*;
+import src.avaj_launcher.simulator.exceptions.InvalidRepetitionNumberException;
+import src.avaj_launcher.simulator.exceptions.NullLineException;
 import src.avaj_launcher.simulator.weather.Coordinates;
 import src.avaj_launcher.simulator.weather.WeatherTower;
 
@@ -18,13 +20,13 @@ public class Simulator {
 			BufferedReader bufferedReader = new BufferedReader(new FileReader(args[0]));
 			String line = bufferedReader.readLine();
 			if (line == null) {
-				System.out.println("Line is null!");
-				System.exit(1);
+				bufferedReader.close();
+				throw new NullLineException("Line is empty.");
 			}
 			int simulationReruns = Integer.parseInt(line);
 			if (simulationReruns < 0) {
-				System.out.println("Invalid number of repetitions!");
-				System.exit(1);
+				bufferedReader.close();
+				throw new InvalidRepetitionNumberException("Invalid number of simulation repetitions!");
 			}
 			weatherTower = new WeatherTower();
 			while ((line = bufferedReader.readLine()) != null) {
@@ -46,6 +48,8 @@ public class Simulator {
 			System.out.println("Couldn't open provided file!");
 		} catch (NumberFormatException | NullPointerException | ArrayIndexOutOfBoundsException e) {
 			System.out.println("Invalid input file!");
+		} catch (NullLineException | InvalidRepetitionNumberException e) {
+			System.out.println(e.getMessage());
 		}
 	}
 }
